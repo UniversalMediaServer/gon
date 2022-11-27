@@ -16,6 +16,12 @@ be run even from the command-line. The
 [workarounds are painful for users](https://github.com/hashicorp/terraform/issues/23033#issuecomment-542302933).
 gon helps you automate the process of notarization.
 
+## Universal Media Server changes:
+
+This fork resolves the following issues/PRs:
+- https://github.com/mitchellh/gon/pull/42
+- https://github.com/mitchellh/gon/issues/64
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
@@ -153,6 +159,7 @@ apple_id {
 
 sign {
   application_identity = "Developer ID Application: Mitchell Hashimoto"
+  deep = false
 }
 
 dmg {
@@ -174,7 +181,8 @@ zip {
         "password":  "@env:AC_PASSWORD"
     },
     "sign" :{
-        "application_identity" : "Developer ID Application: Mitchell Hashimoto"
+        "application_identity" : "Developer ID Application: Mitchell Hashimoto",
+        "deep": false
     },
     "dmg" :{
         "output_path":  "terraform.dmg",
@@ -226,6 +234,10 @@ Supported configurations:
       certificate to use to sign applications. This accepts any valid value for the `-s`
       flag for the `codesign` binary on macOS. See `man codesign` for detailed
       documentation on accepted values.
+
+    * `deep` (`bool` _optional_) - If true, the `--deep` flag is used, which will recursively
+    codesign any directory paths (such as an *.app directory, for example.) Has no effect on
+    individual file paths.
 
     * `entitlements_file` (`string` _optional_) - The full path to a plist format .entitlements file, used for the `--entitlements` argument to `codesign`
 
