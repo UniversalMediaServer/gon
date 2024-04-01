@@ -47,7 +47,7 @@ type Options struct {
 
 	// BaseCmd is the base command for executing app submission. This is
 	// used for tests to overwrite where the codesign binary is. If this isn't
-	// specified then we use `xcrun altool` as the base.
+	// specified then we use `xcrun notarytool` as the base.
 	BaseCmd *exec.Cmd
 }
 

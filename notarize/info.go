@@ -78,8 +78,9 @@ func info(ctx context.Context, uuid string, opts *Options) (*Info, error) {
 
 	cmd.Args = []string{
 		filepath.Base(cmd.Path),
-		"altool",
-		"--notarization-info",
+		"xcrun",
+		"notarytool",
+		"--info",
 		uuid,
 		"-u", opts.Username,
 		"-p", opts.Password,

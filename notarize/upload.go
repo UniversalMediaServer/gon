@@ -38,9 +38,9 @@ func upload(ctx context.Context, opts *Options) (string, error) {
 
 	cmd.Args = []string{
 		filepath.Base(cmd.Path),
-		"altool",
-		"--notarize-app",
-		"--primary-bundle-id", opts.BundleId,
+		"xcrun",
+		"notarytool",
+		"submit",
 		"-u", opts.Username,
 		"-p", opts.Password,
 	}
@@ -52,7 +52,7 @@ func upload(ctx context.Context, opts *Options) (string, error) {
 	}
 
 	cmd.Args = append(cmd.Args,
-		"-f", opts.File,
+		opts.File,
 		"--output-format", "xml",
 	)
 

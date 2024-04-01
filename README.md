@@ -63,18 +63,9 @@ The example below runs `gon` against itself to generate a zip and dmg.
 
 ![gon Example](https://user-images.githubusercontent.com/1299/68089803-66961b00-fe21-11e9-820e-cfd7ecae93a2.gif)
 
-## Installation
+## Build
 
-The easiest way to install `gon` is via [Homebrew](https://brew.sh):
-
-    $ brew install mitchellh/gon/gon
-
-You may also download the appropriate release for your platform
-from the [releases page](https://github.com/mitchellh/gon/releases).
-These are all signed and notarized to run out of the box on macOS 10.15+.
-
-You can also compile from source using Go 1.13 or later using standard
-`go build`. Please ensure that Go modules are enabled.
+`bash build.sh`
 
 ## Usage
 
