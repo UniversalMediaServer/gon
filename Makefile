@@ -4,7 +4,7 @@
 # AFTER THIS YOU MUST MANUALLY DELETE the checksums.txt file since it is
 # incomplete and we don't need checksums since our artifacts are signed.
 release:
-	goreleaser --rm-dist
+	goreleaser --clean
 .PHONY: release
 
 clean:
