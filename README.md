@@ -1,3 +1,9 @@
+**Archived:** I unfortunately no longer make active use of this project
+and haven't properly maintained it since early 2022. I welcome anyone to
+fork and take over this project. 
+
+-----------------------------------------------------
+
 # gon - CLI and Go Library for macOS Notarization
 
 gon is a simple, no-frills tool for
@@ -156,6 +162,7 @@ bundle_id = "com.mitchellh.example.terraform"
 apple_id {
   username = "mitchell@example.com"
   password = "@env:AC_PASSWORD"
+  provider = "UL304B4VGY"
 }
 
 sign {
@@ -179,7 +186,8 @@ zip {
     "bundle_id" : "com.mitchellh.example.terraform",
     "apple_id": {
         "username" : "mitchell@example.com",
-        "password":  "@env:AC_PASSWORD"
+        "password":  "@env:AC_PASSWORD",
+        "provider":  "UL304B4VGY"
     },
     "sign" :{
         "application_identity" : "Developer ID Application: Mitchell Hashimoto",
@@ -225,7 +233,7 @@ Supported configurations:
       **NOTE**: If you have 2FA enabled, the password must be an application password, not
       your normal apple id password. See [Troubleshooting](#troubleshooting) for details.
 
-    * `provider` (`string` _optional_) - The App Store Connect provider when using
+    * `provider` (`string`) - The App Store Connect provider when using
       multiple teams within App Store Connect. If this isn't set, we'll attempt
       to read the `AC_PROVIDER` environment variable as a default.
 
